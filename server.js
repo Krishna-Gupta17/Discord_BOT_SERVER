@@ -39,7 +39,7 @@ app.use(cookieParser());
 app.use("/URL",restrictToLoggedInUserOnly,urlRoute); //inline middleware  - means works only if request comes on /URL
 app.use("/user",userRoute);
 app.use("/",checkAuth,staticRouter);
-const port=8000;
+const port=process.env.PORT || 8000;
 app.listen(port,()=>{console.log(`server started at ${port}`)});
 
 
