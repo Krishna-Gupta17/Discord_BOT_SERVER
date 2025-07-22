@@ -1,9 +1,14 @@
 require("dotenv").config();
+const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const app =express();
 const cookieParser = require('cookie-parser');
+app.use(cors({
+  origin: 'https://discord-bot-8boq.onrender.com'
+}));
+
 //imports
 const connectmongo = require('./connection');
 const URL=require("./models/url");
