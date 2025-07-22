@@ -21,7 +21,7 @@ connectmongo(process.env.MONGO_URL);
 //set tempelate
 app.set("view engine","ejs");
 //views location tell to exprss
-app.set("views",path.resolve("./views"));
+app.set("views",path.resolve("views"));
 //rendering
 // app.get("/test",async(req,res)=>{
 //   const allUrls=await URL.find({});
