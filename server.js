@@ -15,6 +15,7 @@ const URL=require("./models/url");
 const urlRoute=require("./routes/index");
 const staticRouter=require("./routes/staticRouter");
 const userRoute=require("./routes/user");
+const botrouter=require("./routes/bot");
 const {restrictToLoggedInUserOnly,checkAuth}=require("./middlewares/auth");
 //connections
 connectmongo(process.env.MONGO_URL);
@@ -38,6 +39,7 @@ app.use(cookieParser());
 //routes
 app.use("/URL",restrictToLoggedInUserOnly,urlRoute); //inline middleware  - means works only if request comes on /URL
 app.use("/user",userRoute);
+app.use("/BOT",botrouter);
 app.use("/",checkAuth,staticRouter);
 const port=process.env.PORT || 8000;
 app.listen(port,()=>{console.log(`server started at ${port}`)});
