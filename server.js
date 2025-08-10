@@ -6,7 +6,7 @@ const path = require('path');
 const app =express();
 const cookieParser = require('cookie-parser');
 app.use(cors({
-  origin: 'https://discord-bot-8boq.onrender.com'
+  origin: 'https://discord-bot-i0wl.onrender.com'
 }));
 
 //imports
@@ -46,3 +46,4 @@ app.listen(port,()=>{console.log(`server started at ${port}`)});
 
 
 // const { url } = require('inspector'); deleted no meaning
+
