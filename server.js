@@ -37,6 +37,7 @@ app.use(express.json());  //json data supported
 app.use(express.urlencoded({extended:false})); //form data supported
 app.use(cookieParser());
 //routes
+app.get('/check', (req, res) => res.send('Bot is running'));
 app.use("/URL",restrictToLoggedInUserOnly,urlRoute); //inline middleware  - means works only if request comes on /URL
 app.use("/user",userRoute);
 app.use("/BOT",botrouter);
@@ -46,4 +47,5 @@ app.listen(port,()=>{console.log(`server started at ${port}`)});
 
 
 // const { url } = require('inspector'); deleted no meaning
+
 
